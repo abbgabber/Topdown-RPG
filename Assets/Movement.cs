@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
+    public GameObject player;
 
     Vector2 movement;
 
@@ -23,6 +24,11 @@ public class Movement : MonoBehaviour
     }
     
     void FixedUpdate(){
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        if(movement.x == -1){
+            player.transform.localScale = new Vector3(-1f, 1f, 1f);
+        } else{
+             player.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+            rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
 }
