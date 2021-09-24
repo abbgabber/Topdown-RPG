@@ -10,7 +10,8 @@ public class Movement : MonoBehaviour
     public Animator animator;
     public GameObject player;
 
-    Vector2 movement;
+    public Vector2 movement;
+    
 
     // Update is called once per frame
     void Update()
